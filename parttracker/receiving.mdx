@@ -1,0 +1,36 @@
+---
+title: "Receiving"
+description: "What happens when material is received on the Receive/Store page."
+---
+
+Receiving is done on Receive/Store, which is Shipping/Receiving and up. One submission can create several containers at once.
+
+## What receiving does
+
+Each container gets its job, its items, and a shelf location. When the container is linked to a BOM, the BOM's on-hand quantity goes up. The part's Total On Hand on the Inventory page goes up too.
+
+A rack shelf (one named like A.01.A) can only hold one container, so receiving marks it occupied. Custom locations, like a floor area, do not track occupancy.
+
+Every receipt writes a movement record and an audit entry, so the container's history starts at the moment it came in.
+
+A new container has no status, which the app shows as In Stock. The exception is a container that is staged to ship straight away. That one becomes Waiting to Ship, and it needs a weight and dimensions first.
+
+## Prompts you will see
+
+Unrecognized Items Detected means a part on the receipt is not on the job's BOM. You can still receive it.
+
+No Shelf Selected means the container has no location yet.
+
+The form saves a draft as you work (Draft saved). If you leave and come back, it offers the draft again (Draft restored).
+
+After a successful receipt a dialog shows the QR codes for the new containers, ready to print.
+
+## Importing a packing slip
+
+Import Order on the same page reads a packing slip or order PDF, or a photo of one, and fills in the PO number and lines. Back-ordered lines are skipped. Review it before saving. See [AI parsing](/parttracker/ai-parsing).
+
+## When a shelf is taken
+
+If the shelf you picked already holds a container, the receipt fails with Submission Failed and the text Shelf "A.01.A" is already occupied. The form has a friendlier Shelf Unavailable message written for this, but it does not show up at the moment because of how the error comes back from the server. Pick another shelf and submit again.
+
+Two containers in the same receipt cannot share a rack shelf either. That fails with Shelf "A.01.A" assigned twice in one batch.

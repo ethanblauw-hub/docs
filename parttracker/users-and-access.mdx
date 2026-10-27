@@ -1,0 +1,30 @@
+---
+title: "Users and access"
+description: "Who can sign in, how people get onto Access Control, and viewing the app as someone else."
+---
+
+## Signing in
+
+PartTracker uses Sign in with Google, with company Google accounts only. An account from any other email domain is refused the first time it tries to sign in. A sign-in lasts about five days before the app asks again.
+
+A brand new account is a PM. Somebody has to raise it on Access Control if the person needs more.
+
+## The employee list
+
+User records come from the company employee list, through Import Users on the Import page (Shop Manager and up). That import fills in the employee ID, phone number and display name, and it only adds company employees. It never removes anyone. It does not run on a schedule, so a new hire is not in the list until someone runs it.
+
+This matters for two things. A person who has signed in but has not been imported does not show up on Access Control, unless someone already saved a role for them. And their account cannot be linked to an employee ID, so they see Employee Link Failed and the My Jobs filter is turned off for them.
+
+If a new person cannot be found on Access Control, run Import Users first.
+
+Roles are not part of the import. They are only ever set on Access Control. See [Roles and permissions](/parttracker/roles-and-permissions).
+
+## Access Control
+
+Access Control (Shop Manager and up) lists everyone in the employee list. Search by name, email or employee ID. You can change a role when the rules on [Roles and permissions](/parttracker/roles-and-permissions) allow it.
+
+Admins can also edit another person's email preferences from this page.
+
+## Viewing as someone else
+
+The app owner can impersonate another user to see the app exactly as they do, with their permissions. A banner reading IMPERSONATION MODE ACTIVE stays at the top the whole time, with Exit & Sign Out to leave. This is limited to the app owner; nobody else can turn it on. If you need to see what someone else sees, ask me.

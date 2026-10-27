@@ -1,0 +1,22 @@
+---
+title: "AI parsing"
+description: "What the AI reads, what it skips, and why its results are always reviewed first."
+---
+
+PartTracker uses AI in two places. Both read a document and fill in a form. Neither one saves anything until a person reviews the result and presses save.
+
+## BOM PDFs
+
+Import BOM sends a PDF to the AI to pull out the PO number and the part lines. Spreadsheets (.csv, .xlsx, .xls) are read directly, without AI, so they are the more reliable option when you have one. See [BOMs](/parttracker/boms).
+
+## Packing slips and orders
+
+Import Order on Receive/Store reads a packing slip or order as a PDF or a photo. It pulls out the Egan PO number and the shipped lines, and skips back-ordered lines. The result opens for review and editing, and Import Successful shows once it is saved.
+
+Vendor packing slips do not always include enough information to match a line back to the BOM. When a part cannot be matched, receiving flags it as Unrecognized Items Detected and it has to be sorted out by hand.
+
+## Limits
+
+A scan stops after nine minutes with The scan took longer than 9 minutes and was stopped. Try again with fewer pages, or split the file.
+
+AI reads can be wrong in ways that look right. A misread quantity or part number will flow straight into the totals once it is saved, so check the review screen line by line.

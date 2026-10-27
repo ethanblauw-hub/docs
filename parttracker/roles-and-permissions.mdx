@@ -1,0 +1,49 @@
+---
+title: "Roles and permissions"
+description: "The six roles, what each one adds, and how a role gets set."
+---
+
+Everyone has one role. The roles are ranked, and each one can do everything the roles below it can:
+
+| Rank | Role |
+| --- | --- |
+| 1 | PM |
+| 2 | Shop Worker |
+| 3 | Shop Lead |
+| 4 | Shipping/Receiving |
+| 5 | Shop Manager |
+| 6 | Admin |
+
+A new account starts as PM, which is the lowest rank. A user with no role set is treated as PM too.
+
+## What each role adds
+
+PM can see everything: Inventory, Jobs, BOMs, Movements and My Notifications, plus every job and BOM page. PMs cannot change anything.
+
+Shop Worker adds the shop pages: Containers, Production (the Production List and Tickets), Shelf Locations and Shipping. A worker can move material from a container into production (To Production), move a ticket's finished material into carts (Move / Assemble), link containers to a BOM, add photos, and print manifests and labels.
+
+Shop Lead adds Move Shelves on a container, editing and deleting production tickets, Return Voided Material, Print Traveler, editing a BOM and adding a design change, Stock Hub transfers, and correcting a material movement.
+
+Shipping/Receiving adds Receive/Store and the Admin menu (Settings, Manage Shelves, Audit Log Dashboard and Deleted Containers). On a container this role can Edit, Combine / Transfer, Delete, Add Manifest, Ship Container and Return to Stock. It can also create and edit shipping tickets, Mark Delivered, run Smart Pack, restore deleted containers, edit a job's notification list, and press Rebuild Inventory.
+
+Shop Manager adds Import (the ERP syncs), Access Control and Shipping KPIs. A manager can delete a BOM, delete a shipping ticket before pickup, create a stock job, and rename or delete shelves.
+
+Admin adds the notification settings cards on Settings, Tag job as stock, the test-send cards, editing another person's email preferences, and editing a shipping ticket after it has left the shop.
+
+## No job scoping
+
+Roles are not tied to jobs. Everyone who can sign in can read every job. The My Jobs Only switch on the Jobs and Inventory pages is a filter, not a permission: it matches your employee record to the job's PM or field leader. The Movements page also starts on your own jobs, with a switch to show all of them.
+
+## Setting someone's role
+
+Shop Managers and Admins change roles on Access Control. Pick the role from the dropdown and press Save Changes.
+
+There are a few limits. Nobody can change their own role. A Shop Manager can only give out roles below their own rank, and cannot change anyone at or above their own rank. Only an Admin can make someone a Shop Manager or an Admin. The dropdown only lists the roles you are allowed to give.
+
+The person does not have to sign out. The app notices the change and shows Syncing Permissions, then Access Updated. If their new pages still do not show up, have them reload the app, or sign out and back in.
+
+A person only appears on Access Control after they have been imported from the employee list (Import Users on the Import page) or had a role saved before. See [Users and access](/parttracker/users-and-access).
+
+## Pages a role cannot open
+
+If someone opens a page above their rank, the app sends them back to the Inventory page without an error. That is usually the first sign their role is lower than they think.

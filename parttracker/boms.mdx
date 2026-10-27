@@ -1,0 +1,28 @@
+---
+title: "BOMs"
+description: "How a BOM is imported, how the Needed quantity is worked out, and what changes a BOM."
+---
+
+A BOM is the list of parts a job needs. A job can have several BOMs, usually one per PO.
+
+## Importing a BOM
+
+Import BOM on a job takes a .csv, .xlsx, .xls or .pdf file. PDFs are read by AI, so check the result before saving it. See [AI parsing](/parttracker/ai-parsing).
+
+The Review BOMs screen shows one tab per PO number in the file. If the job already has a BOM with that PO, you choose between Update that BOM and Create a new BOM. An update fills in Design Qty first, and then Actual Qty.
+
+## The Needed quantity
+
+Each BOM line can carry several quantities as the job changes. Needed uses the most recent one that applies, in this order: the latest change order that sets the line, then the revised quantity, then the design quantity, then the order quantity.
+
+Add Design Change (Shop Lead and up) adds a change order to the BOM. It does not overwrite the earlier numbers, so the history stays.
+
+## What else touches a BOM
+
+Receiving a container linked to a BOM raises that BOM's on-hand quantity. Link to BOM connects containers that came in without one.
+
+Editing a BOM flags the stock totals for a rebuild, but only when the edit changes something the totals depend on. See [Inventory totals](/parttracker/inventory-totals).
+
+## Deleting a BOM
+
+Delete BOM is Shop Manager and up. It asks you to confirm, removes the BOM and its lines, and writes an audit entry. It cannot be undone from the app.

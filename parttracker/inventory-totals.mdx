@@ -1,0 +1,28 @@
+---
+title: "Inventory totals"
+description: "How the numbers on the Inventory page are worked out, and when they are recounted."
+---
+
+The Inventory page shows one row per part, with tabs for All Items and In Stock / WIP. The numbers are kept as a running total, not counted fresh every time the page opens.
+
+## What each number means
+
+| Column | Counts |
+| --- | --- |
+| On Hand | Material in containers that are not Waiting to Ship and not shipped |
+| Ready to ship | Material in containers that are Waiting to Ship |
+| Shipped | Material in Shipped and Delivered containers, plus anything the BOM says went straight from the vendor to the site |
+| WIP | Material on production tickets that are not Completed or Shipped |
+| At vendor | What the BOM needs, minus everything above |
+
+Voided production tickets still count toward WIP until their material is returned. See [Production tickets](/parttracker/production-tickets).
+
+## How the totals stay current
+
+Every receive, move, transfer and shipment adjusts the totals as it happens.
+
+BOM edits are different. They flag the totals for a full recount, and the recount runs every two minutes during the work day (6:00 a.m. to about 5 p.m. Central, Monday to Friday), only when something is flagged. A BOM edit made in the evening shows up in the totals the next work morning. A job removed by the ERP sync also triggers a recount.
+
+Rebuild Inventory on the Inventory page (Shipping/Receiving and up) forces a full recount right away. It says Inventory Rebuilt when it finishes.
+
+If a total looks wrong, press Rebuild Inventory before digging further. If it is still wrong after that, let me know which part and which job.

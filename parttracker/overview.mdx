@@ -1,0 +1,33 @@
+---
+title: "PartTracker"
+sidebarTitle: "Overview"
+description: "What PartTracker tracks, where its data comes from, and how the pieces fit together."
+---
+
+PartTracker follows prefab shop material from the moment it arrives until it is delivered to a job site. It knows what each job needs, what has been received, where it sits in the shop, what is in production, and what has shipped.
+
+These pages are for managers and for anyone who supports the app. They explain how the app works and why it does what it does. They are not a click-by-click guide for shop floor users.
+
+## The records
+
+A job comes from the ERP. PartTracker does not create real jobs. It reads them in on a schedule and removes them when the ERP stops listing them. See [Jobs and the ERP sync](/parttracker/jobs-and-erp-sync).
+
+A BOM is the list of parts a job needs, imported from a spreadsheet or a PDF. One job can have several BOMs, one per PO. See [BOMs](/parttracker/boms).
+
+A container is anything that physically holds material: a pallet, a box, a cart. Every container belongs to a job (or to the STOCK job) and sits on a shelf location. See [Receiving](/parttracker/receiving) and [Containers and shelves](/parttracker/containers-and-shelves).
+
+A production ticket is a unit of shop work. Most come from the ERP. Material moves from containers into a production ticket, and back out into carts when the work is done. See [Production tickets](/parttracker/production-tickets).
+
+A shipping ticket is one truck run to a site. Carts are attached to it, it gets picked up, and it gets delivered. See [Shipping tickets](/parttracker/shipping-tickets).
+
+## The flow in one line
+
+BOM says what is needed, receiving brings it in, it sits on a shelf, it moves into production, it comes back out on a cart, and the cart ships on a shipping ticket.
+
+Every step changes the stock totals on the Inventory page and leaves a record in the audit log and the material movement history. Nobody edits those records by hand. See [Inventory totals](/parttracker/inventory-totals) and [Audit log and movements](/parttracker/audit-log-and-movements).
+
+## Who can do what
+
+There are six roles, from PM up to Admin, and each one can do everything the roles below it can. See [Roles and permissions](/parttracker/roles-and-permissions).
+
+If something in these pages does not match what you see in the app, let me know.

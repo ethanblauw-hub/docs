@@ -1,0 +1,51 @@
+---
+title: "Containers and shelves"
+description: "Container statuses, moving and combining containers, and what deleting one really does."
+---
+
+A container is anything that holds material: a pallet, a box, a cart. Every container belongs to one job and sits on one shelf location.
+
+## Statuses
+
+A container moves through these, in order:
+
+| Status | Meaning |
+| --- | --- |
+| In Stock | On a shelf. This is what the app shows when no status is stored. |
+| Waiting to Ship | Staged as a cart, ready to go on a shipping ticket. Needs a weight and dimensions. |
+| Shipped | On a truck that has been picked up. Its rack shelf is freed. |
+| Delivered | The shipping ticket was marked delivered. |
+
+## Moving a container
+
+Move Shelves (Shop Lead and up) moves a container to another location. It frees the old rack shelf and takes the new one.
+
+Return to Stock (Shipping/Receiving and up) puts a Waiting to Ship container back to In Stock, as long as it is not on a shipping ticket.
+
+## Combining and transferring
+
+Combine / Transfer (Shipping/Receiving and up) has two modes: Merge Entire Container (Deletes Source), and Transfer Specific Items. Both containers must belong to the same job. A source container that ends up empty is archived.
+
+## Into production
+
+To Production (Shop Worker and up) moves items from a container into a production ticket. The container goes down, the ticket goes up, and the part's WIP total goes up. A container that ends up empty is archived and its rack shelf is freed. This button is not offered on STOCK containers or on containers that are Waiting to Ship. See [Production tickets](/parttracker/production-tickets).
+
+## Shipping a container
+
+Ship Container (Shipping/Receiving and up) stages a container for shipping. It needs a weight and dimensions first; without them you get Missing Measurements. The rest happens on the shipping ticket. See [Shipping tickets](/parttracker/shipping-tickets).
+
+## Deleting and restoring
+
+Delete on a container does not destroy it. The container is archived so it can be restored. Deleted Containers, under Admin, lists them, and Shipping/Receiving and up can restore one.
+
+Only containers someone deleted can be restored. A container that was emptied by a merge, a transfer, a correction or a move to production cannot be, because its items still exist somewhere else and restoring it would count them twice. The app says so and tells you to reverse the operation instead. A restore is also refused when a container with the same id exists again.
+
+Containers deleted before this feature existed are not in the list.
+
+## Shelves
+
+Shelf Locations lists every location and what is on it. Rack shelves follow the A.01.A pattern and hold one container each. Other locations are custom and can hold any number.
+
+Shipping/Receiving and up can add shelves (Add shelves) and mark a custom location as a holding area on Manage Shelves. A container in a holding area counts as still needing a shelf. Shop Managers can rename and delete shelves.
+
+Shelf QR Codes prints labels for the shelves. Scanning a shelf or container QR with a hardware scanner jumps straight to that page.

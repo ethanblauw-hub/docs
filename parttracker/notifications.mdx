@@ -1,0 +1,53 @@
+---
+title: "Notifications"
+description: "Which shipping events send email or Google Chat messages, who gets them, and every way to turn them down."
+---
+
+Only shipping tickets send notifications. Receiving, BOM changes, production tickets, sync runs and role changes do not email or message anyone.
+
+## The three events
+
+Created fires when a ticket is saved with carts, or when a Planned ticket gets its first cart. A Planned ticket that ships today or the next business day is also announced at 6 a.m. on weekdays.
+
+Picked up fires when the truck leaves.
+
+Delivered fires when the ticket is closed out.
+
+## Who can receive them
+
+| Group | Email | Google Chat message |
+| --- | --- | --- |
+| Field leaders on the ticket | Created | Picked up (with an arrival window) and Delivered (with the first delivery photo) |
+| PMs | Created, Picked up, Delivered | None |
+| Extra addresses typed on the ticket | Created, Picked up, Delivered | None |
+| The shipping group and the delivery-type addresses | Created | None |
+
+That table is what the app does when nothing has been changed. The live settings are different. When I last checked, every group was set to Created only and the Chat messages were turned off. Check the Notification Triggers card on Settings for what is actually set today.
+
+PMs only get mail when they are on the job's notification list, or when Also notify the PM named on every ticket is turned on. That switch is off unless an Admin turns it on.
+
+The email is the whole manifest. The PDF is attached to the Picked up email only. Later emails about the same ticket thread into the same conversation. If the PDF fails to build, the email still goes out without it.
+
+Replies to the Chat messages are forwarded into the shop's Chat space every five minutes, but only in Live mode.
+
+## Turning them down
+
+These are applied in order, and each one can only remove people unless it says otherwise.
+
+1. The Notification Triggers card on Settings (Admin) decides which groups get which events.
+2. My Notifications lets each person untick Shipment created, Picked up or Delivered for themselves. It can only reduce what they get.
+3. A job's notification list (Shipping/Receiving and up, on the job page) sets a person to PM, Field Leader, CC or No emails for that one job. It is the final word for that person on that job, and it can also add people.
+4. The Muted jobs card stops every email and message about one job.
+5. People outside the company get an unsubscribe link at the bottom of each email. Once they unsubscribe, nothing re-adds them, not even a job's list. An Admin can reverse it on the Unsubscribed addresses card.
+6. The global mode on Settings: Paused sends nothing, Testing sends everything only to the tester address, and Live sends to the real people.
+7. A separate switch sends the field leader Chat messages to the tester only.
+
+If the notification settings are missing altogether, the app stays paused.
+
+## Testing
+
+Admins have test-send cards on the Import page and an Email Notification Preview card on Shipping with Send Test to Me. Testing mode will not invent an audience: if no group is set to get an event, switching to Testing and triggering that event sends nothing.
+
+## Someone did not get an email
+
+Check, in this order: the global mode, whether their group gets that event on Notification Triggers, their own My Notifications ticks, the job's notification list, Muted jobs, and Unsubscribed addresses. Chat messages only go to field leaders.

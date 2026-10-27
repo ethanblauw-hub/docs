@@ -1,0 +1,62 @@
+---
+title: "Error messages"
+description: "The messages people are most likely to see, what causes each one, and what to do."
+---
+
+Messages are quoted as the app shows them. Words in square brackets change with the record.
+
+## Signing in and permissions
+
+| Message | Cause | What to do |
+| --- | --- | --- |
+| This email domain is not authorized. | Signed in with an account outside the company. | Use the company Google account. |
+| Too many login attempts. Please try again shortly. | Too many sign-in attempts from one network in a few minutes. | Wait a few minutes. |
+| Access Denied: This action requires a higher permission level. Your current role is [role]. | The role is too low for that action. | Check their role; see [Roles and permissions](/parttracker/roles-and-permissions). |
+| Missing or insufficient permissions | Same thing, for an action the browser saves directly. | Same. |
+| Employee Link Failed | The account is not in the employee list, so My Jobs is turned off. | Run Import Users. |
+| You cannot change your own role. | Someone tried to change their own role. | Another manager or an Admin has to do it. |
+| You cannot assign the role "[role]". You may only assign roles below your own. | A Shop Manager tried to give out Shop Manager or Admin. | An Admin has to do it. |
+
+## Receiving and containers
+
+| Message | Cause | What to do |
+| --- | --- | --- |
+| Shelf "[shelf]" is already occupied. (titled Submission Failed) | The rack shelf already holds a container. | Pick another shelf. |
+| Shelf "[shelf]" assigned twice in one batch. | Two containers in one receipt got the same rack shelf. | Give each its own shelf. |
+| Missing Measurements | The container has no weight or dimensions, so it cannot go on a shipping ticket. | Edit the container and add them. |
+| Insufficient quantity for [part]. Requested [n], but container only has [m]. | The container changed after the dialog opened. | Close the dialog and try again. |
+| Not enough stock on hand to fill this edit | The edit takes out more than the container holds. | Lower the quantity. |
+| This container changed while you were editing it. Reload and try again. | Someone else saved the container first. | Reload. |
+| Source and target containers must belong to the same job. | Combine / Transfer across two jobs. | Use a Stock Hub transfer, or move the material another way. |
+| That container was emptied by [operation], not deleted | Restoring a container whose items moved somewhere else. | Reverse the operation instead. |
+
+## Production
+
+| Message | Cause | What to do |
+| --- | --- | --- |
+| Over-allocation | More was assigned to carts than the ticket holds. | Lower the cart quantities. |
+| Cannot Ship, with "[n] unit(s) are still unallocated" | Ship Ticket with material not yet in a cart. | Put everything in carts first. |
+| Tickets from the ERP cannot be deleted in the app. Remove its items instead; the ticket stays. | Delete Ticket on an ERP ticket. | Edit the items to zero instead. |
+
+## Shipping
+
+| Message | Cause | What to do |
+| --- | --- | --- |
+| [cart] is already on another shipping ticket. | A cart can only be on one ticket. | Take it off the other ticket first. |
+| [cart] has already shipped. | The cart left on another truck. | Pick a different cart. |
+| Production ticket [ticket] is reserved for another shipping ticket. | Another ticket reserved it. | Use that ticket, or remove the reservation there. |
+| This ticket has left the shop. Only an admin can edit it now. | Editing after pickup. | Ask an Admin. |
+| Carts and reservations are locked once the truck has left. | Changing carts after pickup. | It cannot be changed in the app. |
+| Only a ticket that hasn't been picked up can be deleted. | Deleting after pickup. | It cannot be deleted. |
+| This shipment has not been marked as picked up yet, so it cannot be closed out. | The delivery QR was scanned before the shop marked the ticket picked up. | Mark it picked up, then scan again. |
+
+## ERP import, AI and email
+
+| Message | Cause | What to do |
+| --- | --- | --- |
+| Job [n] is Closed and cannot be imported. | Import Single Job on a Closed job. | Closed jobs are not imported. |
+| Job [n] was not found in BigQuery. | The job number is not in the ERP data. | Check the number. |
+| The scan took longer than 9 minutes and was stopped. | A large PDF or image for AI parsing. | Split the file, or send fewer pages. |
+| This link is not valid. It may have been copied incorrectly. | A broken unsubscribe link. | Use the link from a newer email. |
+
+If someone sees a message that is not here, send me a screenshot.

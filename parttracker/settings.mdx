@@ -1,0 +1,43 @@
+---
+title: "Settings and switches"
+description: "Every card on the Settings page, what it controls, and its starting value."
+---
+
+Settings is under Admin. Shipping/Receiving and up can open it, but the notification cards are Admin only. There are no hidden feature switches; everything an operator can change is on this page or on Manage Shelves.
+
+The defaults below are what the app does before anyone changes a setting. The live values may be different, so check the card itself.
+
+## Notification cards (Admin)
+
+| Card | What it controls | Default |
+| --- | --- | --- |
+| Global Notification Settings | Paused, Testing or Live, and the Tester Email Address | Paused when nothing is set |
+| Notification Triggers | Which groups get which shipping events, by email and by Chat | See [Notifications](/parttracker/notifications) |
+| Also notify the PM named on every ticket | Mails every PM on a ticket, not just the job's list | Off |
+| Chat trial: send field leader DMs to the tester only | Sends field leader Chat messages to the tester only | Off |
+| Truck departure address | Where trucks leave from, for the arrival window in Chat messages | Not set, so no arrival window |
+| Which shipping methods get an arrival window | Only those methods get a window in the Chat message | Egan Transfer and Prefab Stake Bed |
+| Unload time per stop (minutes) | Time added per stop for the window | 15 minutes; the window is the arrival time plus or minus 30 minutes |
+| Drives up to (hours), and how many business days before they ship | The ship date forecast | Up to 3 hours of driving is 1 business day early, anything longer is 2 |
+| Delivery Type Routing | Extra addresses that get the Created email for each shipping method | None |
+| Unsubscribed addresses | People who unsubscribed; an Admin can reverse it | Empty |
+| Muted jobs | Jobs that send nothing | None |
+| Shipment Photos Links | Lets a shipping ticket's photos be shared by link | Off; links close 30 days after the ticket's last milestone |
+
+With Shipment Photos Links on, an Admin can extend or revoke the link on each ticket.
+
+## Other cards
+
+Work categories, Container Type Defaults (default dimensions for each container type), and Facility Addresses (the short codes used in shipping ticket numbers) can be edited by Shipping/Receiving and up.
+
+Create Stock Job is Shop Manager and up. Tag job as stock is Admin. Production Stock Ticket creates the Manual Adds ticket.
+
+The Delivery Type Routing card shows up for Shipping/Receiving, but saving it needs an Admin.
+
+## Manage Shelves
+
+Manage Shelves (Shipping/Receiving and up) adds shelves and marks custom locations as holding areas. Shop Managers can also rename and delete shelves. See [Containers and shelves](/parttracker/containers-and-shelves).
+
+## Per person
+
+Each person's My Notifications page holds their own muted events. Nobody has anything muted to start with.

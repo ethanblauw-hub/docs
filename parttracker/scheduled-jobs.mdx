@@ -1,0 +1,18 @@
+---
+title: "Scheduled jobs"
+description: "Everything PartTracker does on its own, and when."
+---
+
+Five things run on their own. Nothing else happens without someone pressing a button.
+
+| What | When | What it does |
+| --- | --- | --- |
+| Job sync | About every 12 hours | Adds and updates jobs from the ERP, and removes jobs the ERP no longer lists. See [Jobs and the ERP sync](/parttracker/jobs-and-erp-sync). |
+| Production ticket sync | About every 12 hours | Adds and updates production tickets. Never deletes any. |
+| Stock totals rebuild | Every 2 minutes, 6:00 a.m. to about 5 p.m. Central, Monday to Friday | Recounts the Inventory page, but only when a BOM edit flagged it. See [Inventory totals](/parttracker/inventory-totals). |
+| Planned ticket announcement | 6 a.m. Central, Monday to Friday | Sends the Created notice for Planned tickets that ship today or the next business day. |
+| Chat reply forwarding | Every 5 minutes | Copies replies to the field leader Chat messages into the shop's Chat space. Live mode only. |
+
+I have not pinned down the exact clock times of the two 12-hour syncs. If a new job or ticket is needed sooner, a Shop Manager can run the sync from the Import page instead of waiting.
+
+The employee list is not on a schedule. Import Users only runs when someone presses it.

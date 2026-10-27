@@ -1,0 +1,40 @@
+---
+title: "Production tickets"
+description: "Moving material into a production ticket, building carts from it, shipping it, and what happens to voided tickets."
+---
+
+A production ticket is a unit of shop work. Material that is being worked on lives on the ticket, not in a container, and it counts as WIP on the Inventory page.
+
+Most tickets come from the ERP. See [Jobs and the ERP sync](/parttracker/jobs-and-erp-sync) for where they come from and what their statuses mean.
+
+## Material in
+
+Material reaches a ticket three ways: To Production from a container, Add Standalone Item into the Manual Adds ticket, and Smart Pack, which can pull from production items when it builds carts.
+
+## Material out
+
+Move / Assemble on the ticket page (Shop Worker and up) opens Cart Creator / Assembly. It has two choices.
+
+Complete & Ship / Assemble builds carts from the ticket's material. The new carts are Waiting to Ship.
+
+Return to Stock puts the material back into In Stock containers.
+
+You cannot take out more than the ticket holds. That stops with Over-allocation, or with an Insufficient qty message that says how much the ticket has. An empty cart is allowed, but the app asks first.
+
+## Shipping a ticket
+
+Ship Ticket (Shipping/Receiving and up), in the same dialog, finishes the ticket. Every unit has to be in a cart first; otherwise you get Cannot Ship, Items Remaining. The ticket becomes Shipped, and if a shipping ticket had reserved it, the carts join that shipping ticket.
+
+## Editing and deleting
+
+Edit (Shop Lead and up) changes the quantities line by line. Each change is recorded in the movement history as an adjustment. If an edit empties an app-made ticket, the ticket is deleted. An ERP ticket stays, even when it is empty.
+
+Delete Ticket (Shop Lead and up) only works on tickets the app made. ERP tickets cannot be deleted in the app; remove their items instead.
+
+## Voided tickets holding material
+
+When the ERP voids a ticket that still has material on it, nothing moves that material automatically. It still counts as WIP. The Production page shows a Voided Tickets Holding Material card (Shop Lead and up). Return Material on that card moves all of a ticket's material into a stock container on whatever job you choose.
+
+## Travelers
+
+Print Traveler (Shop Lead and up) prints a ticket's traveler on letter paper, or a 4 by 6 pallet label in portrait or landscape. The Tickets list can print several at once. See [Labels, QR codes and travelers](/parttracker/labels-and-travelers).

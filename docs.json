@@ -63,6 +63,55 @@
             ]
           }
         ]
+      },
+      {
+        "tab": "PartTracker",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": [
+              "parttracker/overview",
+              "parttracker/roles-and-permissions"
+            ]
+          },
+          {
+            "group": "How material moves",
+            "pages": [
+              "parttracker/jobs-and-erp-sync",
+              "parttracker/boms",
+              "parttracker/receiving",
+              "parttracker/containers-and-shelves",
+              "parttracker/production-tickets",
+              "parttracker/shipping-tickets"
+            ]
+          },
+          {
+            "group": "Administration",
+            "pages": [
+              "parttracker/users-and-access",
+              "parttracker/notifications",
+              "parttracker/settings",
+              "parttracker/scheduled-jobs"
+            ]
+          },
+          {
+            "group": "Features",
+            "pages": [
+              "parttracker/inventory-totals",
+              "parttracker/audit-log-and-movements",
+              "parttracker/labels-and-travelers",
+              "parttracker/ai-parsing",
+              "parttracker/stock-photos-and-kpis"
+            ]
+          },
+          {
+            "group": "Troubleshooting",
+            "pages": [
+              "parttracker/cannot-see-or-do",
+              "parttracker/error-messages"
+            ]
+          }
+        ]
       }
     ]
   },

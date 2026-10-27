@@ -1,0 +1,39 @@
+---
+title: "Jobs and the ERP sync"
+description: "Where jobs and production tickets come from, how often they refresh, and what happens when a job disappears from the ERP."
+---
+
+PartTracker does not own jobs. The ERP does, and PartTracker reads them in on a schedule. Production tickets come in the same way.
+
+## Jobs
+
+The job sync runs about every 12 hours. A job has one of three statuses: Open, Inactive or Closed. Completed and voided jobs, and template jobs, are never read in.
+
+A new job is only added if it is not Closed. A job that is already in the app keeps updating, so when a job closes in the ERP it stays in PartTracker as history instead of disappearing. Closed jobs are hidden on the Jobs page until you turn on the closed filter.
+
+The sync can also remove jobs. When a job stops showing up in the ERP at all, PartTracker deletes it, and that cascades:
+
+- its containers move to the STOCK job (Stock Inventory) and become In Stock, and their attached manifest files are removed;
+- quantities on its production tickets move to the Manual Adds ticket, and then those tickets are deleted;
+- the job and its BOMs are deleted;
+- the stock totals are rebuilt.
+
+There is a safety check on this. If the ERP returns far fewer jobs than it normally does, the sync assumes something is wrong on the ERP side and skips every deletion that run. If it returns nothing at all, the run stops.
+
+## Production tickets
+
+The ticket sync also runs about every 12 hours. It adds new tickets and updates the ones already here. It never deletes a ticket. A ticket that is already finished in the ERP is not added as new.
+
+A ticket's status is the ERP's stage, for example 1: Pre-Drafting through 6: Build, 7A: Build Complete, 7B: Awaiting Shipment, Completed or Voided. Once PartTracker marks a ticket Shipped, the ERP's Completed or Voided does not overwrite it.
+
+The app can make its own tickets too: Create Ticket on the Production pages (status Queued), and the Manual Adds ticket that holds loose stock in production.
+
+## Running a sync by hand
+
+Shop Managers can run every sync from Admin, then Import: jobs, tickets, and the employee list. Use Import Single Job from BigQuery to pull in one job right away instead of waiting for the next run. It will not import a Closed job.
+
+The employee import (Import Users) only runs by hand. It is not on a schedule.
+
+## Stock jobs
+
+The STOCK job holds material that is not tied to a real job. Shop Managers can create additional stock jobs from Settings, and an Admin can tag an existing job as stock.

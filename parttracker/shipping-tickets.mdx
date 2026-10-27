@@ -1,0 +1,59 @@
+---
+title: "Shipping tickets"
+description: "Creating a shipping ticket, pickup, delivery, and who can change a ticket at each stage."
+---
+
+A shipping ticket is one truck run to a site. Carts are containers that are Waiting to Ship, with a weight and dimensions.
+
+The Shipping page has two tabs: Shipping Tickets, and Pre-loaded Carts, which are carts that are not on a ticket yet.
+
+## Statuses
+
+| Status | Meaning |
+| --- | --- |
+| Planned | A Waiting for Delivery ticket with no carts yet. |
+| Waiting for Delivery | Carts attached, waiting for the truck. |
+| Picked up | The truck has left with the carts. |
+| Delivered | Someone at the site, or the shop, closed it out. |
+
+## Creating a ticket
+
+Create Shipping Ticket (Shipping/Receiving and up) sets the job, the destination, the shipping method and the dates. The methods are Egan Transfer, GrayBar, Van Meter, Courier, Prefab Stake Bed and Other.
+
+The ticket number is the job number, a short code for the destination, and a sequence number. The destination codes come from Facility Addresses on Settings.
+
+Carts attached from a shelf become Waiting to Ship. Taking a cart off the ticket puts it back the way it was. A cart cannot be on two tickets, and a cart that has already shipped cannot be added.
+
+You can also reserve a production ticket that is still being built. When that ticket is shipped from production, its carts join this shipping ticket on their own. A ticket that is finished or voided cannot be reserved.
+
+The ship date can be forecast from the Needed by date: one business day earlier for a drive of up to three hours, two days earlier for anything longer. A date you type yourself is never overwritten.
+
+## Pickup
+
+Mark as Picked Up / Shipped opens Process Shipment Departure. It asks for the driver's name and the truck type. Tick the carts that are actually on the truck under Carts Loaded. Those become Shipped and their shelves are freed. Unticked carts go back to the staging pool. Anything typed in Departure Notes is added to the ticket.
+
+A Planned ticket needs at least one cart before it can be picked up.
+
+Pickup creates the manifest with its QR code. Whether anyone is emailed depends on the notification settings. See [Notifications](/parttracker/notifications).
+
+## Delivery
+
+There are two ways to close out a ticket.
+
+The person delivering can scan the QR code on the manifest. That opens a delivery page, which does not need a PartTracker login, and asks for the receiver's name, email, phone and a photo.
+
+In the app, Mark Delivered (Shipping/Receiving and up) does the same thing. The photo is optional there, and a ticket closed without one is marked as delivered without a photo.
+
+Either way, every cart on the ticket becomes Delivered. A ticket can only be delivered after it is Picked up, and only once.
+
+## Changing a ticket
+
+While a ticket is Waiting for Delivery, it can be edited normally. After pickup, only an Admin can change the logistics details, and the carts are locked.
+
+A ticket can only be deleted before pickup, and only by a Shop Manager or Admin. Deleting it puts its carts back the way they were and clears any reservations.
+
+## Other buttons
+
+Route shows the drive. Load Plan suggests a truck size from the carts. View QRs, and Print Labels or Print Manifest, print what the truck needs.
+
+Smart Pack (Shipping/Receiving and up) is a step-by-step dialog that pulls a job's material from containers and production into new carts.
