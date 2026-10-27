@@ -1,0 +1,53 @@
+---
+title: "Users and access"
+description: "Giving someone access, changing it, removing it, and what each status on Manage users & roles means."
+---
+
+Admins manage access from the user menu, under Manage users & roles.
+
+## Getting someone in
+
+Anyone with an eganco.com Google account can sign in, but signing in does not give them anything. Until they have a role, they land on a screen that says Access not yet granted, with Check again and Sign out buttons.
+
+There are two ways to give someone access:
+
+- If they show up in the People list, press Grant on their row, pick a role and a scope, and save.
+- If they do not, use Grant access by email at the bottom. Enter their eganco.com address, a role and a scope, and press Grant. If they have signed in before, it takes effect right away. If not, it waits for their first sign-in.
+
+The scope is a line for workers and leads, a location for managers, and the entire org for admins. See [Roles and permissions](/prefab-gantt/roles-and-permissions).
+
+Once access is granted, the person can press Check again, or sign out and back in.
+
+## The People list
+
+The list shows Person, Email, Role, Status and Last sign-in. Problems sort to the top. The statuses are:
+
+| Status | Meaning |
+| --- | --- |
+| Has access | Signed in and has a role |
+| Signed in — no access | Signed in at least once, but nobody has given them a role |
+| Invited — not signed in yet | Granted by email, waiting for their first sign-in |
+| Invite will never fire | An email invite is still listed for someone who already has access. Revoke the invite |
+| No sign-in account | Has a role in the app, but no sign-in account to go with it |
+| Account disabled | Their sign-in account is disabled |
+| Access removed | Access was taken away |
+
+Import employee directory refreshes the list of people from the HR directory. It adds active employees and drops inactive ones. It does not give anyone access.
+
+## Changing or removing access
+
+Edit on a row changes the role and scope. Remove takes access away and asks for a reason, for example that the person left the company. Pending email invites can be revoked from the same list.
+
+A few changes are refused:
+
+- Nobody can change their own access. Another admin has to.
+- Nobody can give a role above their own, or a scope outside their own.
+- The last working admin cannot be removed or demoted.
+
+A role change can take up to an hour to reach someone who is not in the app. Having them sign out and back in should pick it up right away.
+
+## Other admin tools
+
+Digest preview, in the user menu, shows what the daily mention email would say, without sending anything.
+
+Admins can remove a comment that was a test, wrong or rude. The app asks for a reason, and the thread shows Comment removed by an admin in its place.

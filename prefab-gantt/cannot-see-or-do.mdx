@@ -1,0 +1,53 @@
+---
+title: "Someone cannot see or do something"
+sidebarTitle: "Cannot see or do something"
+description: "The checks to run, in order, when a ticket, page or button is missing."
+---
+
+Work down this list. Most problems stop at the first or second check.
+
+## 1. Do they have access at all?
+
+If they see Access not yet granted after signing in, nobody has given them a role yet. Find them on Manage users & roles. If their status is Signed in — no access, grant them a role and a scope. See [Users and access](/prefab-gantt/users-and-access).
+
+If they cannot sign in at all, check that they are using their eganco.com Google account. Other accounts are turned away.
+
+## 2. Is the role high enough?
+
+Check their role against [Roles and permissions](/prefab-gantt/roles-and-permissions). The common ones:
+
+- Changing Shop Lead, Assigned To or Hard Date needs a manager.
+- Holidays, the Resource List and Status Colors need a manager.
+- Bulk edit, baselines and running the import by hand need a manager.
+- The VDC on-time table by designer needs a manager.
+
+## 3. Is the scope right?
+
+If someone can sign in but tickets are missing, their scope probably does not cover that line. A worker or lead only sees the lines they were given. A manager sees their whole location.
+
+## 4. Did a role change reach them yet?
+
+A new role can take up to an hour to reach someone who was not in the app when it changed. Have them sign out and back in.
+
+## 5. Is it a filter?
+
+The ticket may be there and hidden:
+
+- Mine on a queue only shows their own tickets. Switch to All.
+- The status filter, search box, line filter or a column filter on Tickets.
+- A Status Tracker card on Analytics filters the whole app until it is clicked again.
+- A saved view brings its filters with it. Clear filters resets the page.
+
+## 6. Is the ticket still live?
+
+Tickets SIS has marked Completed or Voided drop off the schedule on the next import. If a ticket was just created or changed in SIS, it should show up within the hour, after the next import. A manager can run the import by hand from the badge in the header.
+
+## 7. Is it in the right queue?
+
+Queues go by SIS status. A ticket that seems to be in the wrong queue usually has a status in SIS that does not match where the shop thinks it is. See [Views and queues](/prefab-gantt/views-and-queues).
+
+## 8. Is it a per-browser setting?
+
+Tweaks and the experimental switches are per browser. If a button is missing on one computer and not another, compare Tweaks on both, especially Editable milestones, What-if sandbox and Shop leads edit on Tickets.
+
+If none of these explain it, let me know which person, which ticket and what they expected to see.

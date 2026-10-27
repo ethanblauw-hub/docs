@@ -1,0 +1,54 @@
+---
+title: "Editing tickets"
+description: "Which fields the shop can change, how those edits survive the SIS import, undo, history, and bulk changes."
+---
+
+## SIS fields and shop fields
+
+A ticket has two layers. The SIS layer is everything the import brings in, and it is rewritten every hour. The shop layer is what people set in the app, and the import never touches it. Where the two overlap, the shop's value wins until someone clears it.
+
+That is why there is no way to edit status, the estimate, Date Requested or the VDC designer here. A change to any of those would be gone by the next import. They have to be changed in SIS.
+
+## The fields the shop can set
+
+| Field | Who | What blank means |
+| --- | --- | --- |
+| Custom Start | Lead and up | The computed start is used |
+| Revised Est Hrs | Lead and up | The SIS estimate is used |
+| Hrs / Day | Lead and up | The default rate |
+| Reported % | Lead and up | Nothing reported |
+| Shop Lead | Manager and up | The imported lead is used |
+| Assigned To | Manager and up | |
+| Hard Date | Manager and up | Follows SIS |
+
+Hard Date only shows when the ticket has a Date Requested. Its choices are Follow SIS, Hard and Soft.
+
+These can be set from the ticket's detail panel (Save Overrides and Cancel at the bottom), from the Tickets grid, or from the Build queue. Leads can edit Custom Start, Revised Est Hrs and Reported % on the Tickets grid while the Shop leads edit on Tickets switch is on, which it is by default.
+
+Some values are refused instead of saved. Revised Est Hrs has to be 0 or more, and Hrs / Day has to be more than 0. A value that does not parse leaves the ticket alone and the cell goes back to what it was. Reported % above 100 or below 0 is pulled back into range.
+
+The app shows two progress figures. Computed % is hours worked over the estimate, and it is allowed to go past 100%, because a ticket at 123% is over budget and should look it. Reported % is what someone typed in. They are meant to disagree sometimes.
+
+## Undo
+
+Ctrl+Z and Ctrl+Y undo and redo ticket edits, about 20 deep. Undo only covers ticket edits. If your last action was something else, like a dependency change or a planning page save, the app says so instead of undoing it. Undo only reverts your own edits, never someone else's.
+
+## History
+
+Every change to a ticket shows in the Activity section of its detail panel, with the old value, the new value, who made it and when. Dependency changes, material dates, start gates and milestones also record the reason the person typed.
+
+## Bulk edit
+
+Managers can change one field across many tickets at once on the Tickets view. Press Select, tick the rows, then press Edit. The dialog lists every ticket it will touch before anything is saved, with switches to skip ones like tickets on hold, and the button reads Apply to X of Y.
+
+Each ticket gets its own history entry, and the whole change undoes as one step.
+
+## Bulk schedule
+
+The other tab in the same dialog sets Custom Starts for a run of tickets. Give it a start date, an optional end date, the hours per day and how many tickets run at once. It follows the grid's current sort order and shows the plan before it writes anything, with markers for tickets that would get 0 hours, already had a Custom Start, are on hold, or have a dependency or parts date in the way.
+
+## Build holds
+
+While SIS has a ticket at (On Hold): Build, the app keeps its start at least 3 weeks out from today, and moves that forward every day. A Custom Start set during the hold wins over that, and the panel says so. When SIS lifts the hold, the next import sets the Custom Start to the day it was lifted.
+
+If a Custom Start set during a hold passes while SIS still says on hold, the panel warns about it. That usually means the hold should be lifted in SIS.

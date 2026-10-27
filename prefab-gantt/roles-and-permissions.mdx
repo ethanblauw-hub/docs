@@ -1,0 +1,67 @@
+---
+title: "Roles and permissions"
+description: "The four roles, what each one adds, and what a role is scoped to."
+---
+
+Everyone has one role. The roles are ranked, and each one can do everything the roles below it can:
+
+| Rank | Role |
+| --- | --- |
+| 1 | Shop Worker |
+| 2 | Shop Lead |
+| 3 | Shop Manager |
+| 4 | Admin |
+
+## What each role can do
+
+These are the labels from the Capability ladder on Manage users & roles.
+
+| Capability | Worker | Lead | Manager | Admin |
+| --- | --- | --- | --- | --- |
+| View schedule, blocks & links | Yes | Yes | Yes | Yes |
+| Comment on tickets | Yes | Yes | Yes | Yes |
+| Link tickets (dependencies) | | Yes | Yes | Yes |
+| Set material blocks | | Yes | Yes | Yes |
+| Edit planning lists (time off, apprentices, forecast) | | Yes | Yes | Yes |
+| Maintain tickets in the Build & Procurement queues | | Yes | Yes | Yes |
+| Add / edit milestone markers | | Yes | Yes | Yes |
+| Share a saved view with specific people | | Yes | Yes | Yes |
+| Edit shop reference data (resource list, holidays) | | | Yes | Yes |
+| Scheduling overrides (dates & hours) | | | Yes | Yes |
+| Set the shop baseline (plan-of-record) | | | Yes | Yes |
+| Declare a requested date hard or soft | | | Yes | Yes |
+| Publish a saved view to the whole shop | | | Yes | Yes |
+| Run the SIS import on demand | | | Yes | Yes |
+| See VDC on-time % by designer | | | Yes | Yes |
+| Manage users & roles | | | | Yes |
+| Remove a comment (test, wrong or rude) | | | | Yes |
+
+A few of these need more detail:
+
+- Leads can edit four fields on a ticket: Custom Start, Hrs / Day, Revised Est Hrs and Reported %. Shop Lead, Assigned To and Hard Date stay with managers.
+- Milestones are tiered. A lead can add one for their line, a manager for their location, and an admin for the whole org.
+- A manager's baseline is the shop baseline that everyone sees. An admin's baseline is private to them.
+
+## What a role is scoped to
+
+A role comes with a scope, and the scope decides which lines you see:
+
+- Workers and leads are scoped to one or more lines.
+- Managers are scoped to a location, which covers every line in it.
+- Admins cover the whole org.
+
+The scope only decides what you can see. What you can do comes from the role.
+
+## Setting someone's role
+
+Admins set roles on Manage users & roles. See [Users and access](/prefab-gantt/users-and-access).
+
+A role change takes effect the next time the person's sign-in refreshes, which can take up to an hour if they are not in the app. Having them sign out and back in should pick it up right away.
+
+## View as
+
+Admins have a View as option in the user menu, labelled admin preview. It shows the app as a lower role would see it. It never gives anyone more than their real role allows, and anything done while previewing is still recorded under the admin's own name.
+
+## The buttons are a convenience
+
+The app hides controls a role cannot use, but the server checks every change on its own. If someone does get to a control their role does not allow, the change is refused and reverted with "You don't have permission to make that change — reverted."

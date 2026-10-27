@@ -1,0 +1,68 @@
+---
+title: "Error messages"
+description: "The messages people are most likely to see, what each one means, and what to do."
+---
+
+## Saving edits
+
+| Message | Meaning |
+| --- | --- |
+| You don't have permission to make that change — reverted. | Their role does not allow that change. See [Roles and permissions](/prefab-gantt/roles-and-permissions) |
+| Couldn’t save — change reverted. | The save failed for another reason, usually the connection. Try again |
+| Revised Est Hrs must be a number of 0 or more — the ticket was left alone. | The value was not a number, or was negative |
+| Hrs / day must be more than 0 — a zero rate leaves the ticket never finishing, so it was left alone. | 0 or a negative rate was entered |
+| Reported % must be a number — the ticket was left alone. | The value was not a number |
+| N rejected the value you entered and will be left alone. | Bulk edit: some tickets refused the value, for the reasons above. The rest were changed |
+
+## Undo
+
+| Message | Meaning |
+| --- | --- |
+| Nothing to undo. / Nothing to redo. | There is nothing left in the history |
+| Undo doesn’t cover that dependency change yet — only ticket edits. | The last action was not a ticket edit. The same message names other actions, like a planning sheet save. Change it back by hand |
+
+## Bulk schedule
+
+| Message | Meaning |
+| --- | --- |
+| Pick a start date. | No start date was entered |
+| That start date is outside the scheduling window. | The date is too far out for the schedule to place |
+| No working day remains on or after that start date. | Every day from there on is a weekend or holiday |
+| Simultaneous tickets must be at least 1. | Set it to 1 or more |
+| Hrs / day must be greater than 0. | Set a rate above 0 |
+
+## The import
+
+| Message | Meaning |
+| --- | --- |
+| Import finished — N tickets refreshed from SIS. | A run started by hand finished |
+| An import started at (time) is still running. Wait for it to finish rather than starting a second one. | One is already running. Wait for it |
+| Only a manager or admin can start an import. | Their role is below manager |
+| Import stalled (badge) | A run stopped part way. Start a new one |
+| Import failed (badge) | The last run hit an error. Hover the badge for it. The tickets shown are from the last good run. Let me know if it fails twice in a row |
+| Live updates stopped | The page lost its live connection. Reload it |
+| Live updates may have stopped | The page has not heard anything in a while. It clears on its own if data arrives |
+
+## Access
+
+| Message | Meaning |
+| --- | --- |
+| Access not yet granted | Signed in, but no role yet. An admin needs to grant one |
+| Access is restricted to eganco.com accounts. | They signed in with a non-company account |
+| You cannot change your own access. | Another admin has to make the change |
+| You cannot grant a role above your own (role). | Pick a lower role, or have a higher-ranked admin do it |
+
+## Planning pages and saved views
+
+| Message | Meaning |
+| --- | --- |
+| This page has unsaved changes. Leave anyway and discard them? | Leaving a planning page with edits not yet saved |
+| Someone else saved this page while you were editing. | Saving keeps your changes and leaves their other rows alone. Discard takes theirs |
+| Part of that view no longer matches | The saved view points at something that was removed or renamed. Save it again |
+| Could not save — your view is still on screen, try again. | Saving a view failed, usually the connection |
+
+## Notifications
+
+| Message | Meaning |
+| --- | --- |
+| Blocked (push notifications) | The browser is refusing notifications. Allow them from the padlock in the address bar, or ask IT if it says your administrator blocked them |

@@ -1,0 +1,29 @@
+---
+title: "Prefab Gantt overview"
+sidebarTitle: "Overview"
+description: "What the Prefab Gantt is, where its data comes from, and how the pages fit together."
+---
+
+The Prefab Gantt is the schedule for the prefab shop's build queue. It replaced the Production Gantt Chart spreadsheet. Every ticket in SIS that is not Completed or Voided shows up here, laid out on a calendar by the hours it needs and the hours the shop has.
+
+## Where the data comes from
+
+Tickets come from SIS. An import runs every hour at 20 past, from 5:20 am to 5:20 pm Central, and refreshes the SIS fields on every ticket: status, estimated hours, hours worked, Date Requested, the VDC designer and the rest. Those fields are read-only in the app. If one is wrong, it has to be fixed in SIS, and the next import should bring it across.
+
+What the shop decides lives in the app instead: a Custom Start, a revised estimate, the shop lead, hours per day, dependencies, material dates, comments. The import never touches those. See [Editing tickets](/prefab-gantt/editing-tickets).
+
+When SIS marks a ticket Completed or Voided, it drops off the live schedule on the next import. Anything the shop added to it in the app is kept.
+
+## The pages
+
+The tabs across the top are Tickets, Resource, Overview, Floor Map, Analytics and Rolling Charts. The Queues menu holds the VDC Queue, Procurement Queue and Build Queue. The Planning menu holds Resource List, Time Off, Apprentice Calendar, Holidays, Forecasted Jobs and Status Colors. [Views and queues](/prefab-gantt/views-and-queues) goes through each one.
+
+The header carries the import badge (when the last import ran), the alerts triangle, the mentions bell, Saved Views, Export, Print, dark mode, the Tweaks panel and your user menu.
+
+## Signing in
+
+The app signs in with Google and only takes eganco.com accounts. Signing in is not the same as having access: someone also has to be given a role and a line, location or the whole org. See [Users and access](/prefab-gantt/users-and-access).
+
+## Where to start
+
+If you are setting someone up, read [Roles and permissions](/prefab-gantt/roles-and-permissions) first. If someone says they cannot see or change something, start with [Someone cannot see or do something](/prefab-gantt/cannot-see-or-do).

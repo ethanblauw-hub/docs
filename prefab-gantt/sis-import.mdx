@@ -1,0 +1,43 @@
+---
+title: "The SIS import"
+description: "When tickets refresh from SIS, what the import owns, and running one on demand."
+---
+
+## When it runs
+
+The import runs every hour at 20 past, from 5:20 am to 5:20 pm Central, every day. A separate run at 8:05 am brings in the previous day's timesheet hours.
+
+It runs at 20 past, not on the hour, because SIS's data is rebuilt at the top of the hour.
+
+## What it changes
+
+The import owns the SIS fields: status, estimated hours, hours worked, Date Requested, the VDC designer, PM, field leaders, the notes and the rest. It rewrites them on every run, so a change made in SIS should show up within the hour.
+
+It never touches anything the shop set in the app: Custom Starts, revised estimates, shop leads, dependencies, material dates, comments and history. See [Editing tickets](/prefab-gantt/editing-tickets).
+
+It also does a few things on the side:
+
+- Tickets SIS marks Completed or Voided leave the live schedule. What the shop added to them is kept.
+- When SIS lifts a build hold, the ticket's Custom Start is set to the day it was lifted.
+- When a ticket leaves VDC, it is recorded for the VDC on-time numbers. See [VDC on time at handoff](/prefab-gantt/vdc-on-time).
+
+## The import badge
+
+The badge in the header says when the last import ran and how many tickets it brought in, for example Last import: 1:20 PM and a ticket count. It also shows:
+
+| Badge | Meaning |
+| --- | --- |
+| Scheduled import running… | The hourly import is running now |
+| (name) is refreshing… | Someone started one by hand |
+| Import stalled | A run stopped part way. A new one can be started |
+| Import failed | The last run hit an error. Hover for the error. The data shown is from the last good run |
+
+## Running it now
+
+Managers and admins can click the badge to run the import right away, for example after fixing something in SIS. It is greyed out while a run is already going. When it finishes, the app says Import finished and how many tickets were refreshed.
+
+Only one import runs at a time. Starting one while another is running is refused, with the time the running one started.
+
+## Open tabs
+
+Tickets refresh in an open tab on their own after each import, so nobody has to reload. If the live connection drops, the header says Live updates stopped, and reloading the page fixes it.

@@ -1,0 +1,53 @@
+---
+title: "Planning pages"
+description: "The Planning menu: resources, time off, apprentices, holidays, forecasted jobs and status colors."
+---
+
+The Planning menu holds the shop's capacity data. Together these pages decide how many hours the shop has on a given day, which is what the schedule packs tickets into.
+
+## Who can edit which page
+
+| Page | Who can edit |
+| --- | --- |
+| Resource List | Manager and up |
+| Holidays | Manager and up |
+| Status Colors | Manager and up |
+| Time Off | Lead and up |
+| Apprentice Calendar | Lead and up |
+| Forecasted Jobs | Lead and up |
+
+## Saving
+
+These pages do not save as you type. Edits collect in a bar at the bottom that reads N unsaved changes, with Discard and Save. Leaving the page with unsaved edits asks first.
+
+If someone else saved the same page while you were editing, the app tells you. Saving keeps your changes and leaves their other rows alone. Discard takes their version instead.
+
+## Resource List
+
+One row per person: Name, % Billable, Crew, Classification and Can Shop Lead. Can Shop Lead decides who shows up in the Shop Lead picker on a ticket.
+
+## Time Off
+
+Employee, Time Off Start, Time Off End and Location / PTO. Time off comes out of the shop's available hours.
+
+## Apprentice Calendar
+
+Employee, Start Date, End Date and School Day. The app works out the school days from those, and they come out of available hours like time off.
+
+## Holidays
+
+Holiday Name, Date, Hours Off and Working Day?. Hours Off can be part of a day, from 0 to 8. A holiday can apply to one line, a location or the whole org, and the editor needs manager rights at that level.
+
+The page also checks the list against the usual holiday rules and offers to add ones that are missing or fix dates that look wrong. Nothing changes until you accept a suggestion.
+
+Holidays also matter outside the schedule. The VDC Due Date skips them, so a missing holiday counts as a working day and pushes due dates around it a day later than they should be.
+
+## Forecasted Jobs
+
+Work that is expected but not in SIS yet: Job Description, PM, Date Requested, Est. Hours, Hrs/Day, Days, Show in Gantt?, Ticket Date, Custom Start, Sat Hrs, Sun Hrs, Foreman and Job Cost. Rows with Show in Gantt? ticked feed the soft backlog on Rolling Charts.
+
+## Status Colors
+
+One row per SIS status: Status, Color, Preview (as rendered), Source and Work finished. Clearing a color puts the status back on the built-in color. A status that no ticket uses right now is marked unused but kept, so its color is still there if it comes back.
+
+The colors are shop-wide, so changing one changes it for everyone.

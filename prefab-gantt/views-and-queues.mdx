@@ -1,0 +1,60 @@
+---
+title: "Views and queues"
+description: "What each page shows, and how the three work queues decide which tickets they hold."
+---
+
+## The main views
+
+Tickets is a spreadsheet with a bar calendar beside it. The columns are Ticket, Job Name, Date Req, Custom Start, Planned Completion, Order Description, Status, Est, Rev Est, Worked, Remaining, Shop Lead, H/Day, Reported %, Computed %, PM and Field Leader. Columns can be sorted, filtered, hidden and dragged into a different order. Rows can be grouped By Job, By PM or By Status, and Roll up collapses the groups. This is also where Select, bulk edit and bulk schedule live.
+
+Resource lays the bars out by person or group, one row each. Bars can be dragged to move a ticket. The Level button suggests moves that take the overload off a row.
+
+Overview is the capacity dashboard, by location and line: Active Tickets, Resources, Worked, Remaining, Over Budget, utilization, and upcoming deadlines.
+
+Floor Map shows the shop's tables and which tickets are on them, with Total Tables, In Use and Available counts and a filter for assigned or available tables.
+
+Analytics has the Status Tracker (clickable cards that filter the whole app by status), the VDC On Time at Handoff section, and the charts. See [Analytics and reports](/prefab-gantt/analytics-and-reports).
+
+Rolling Charts shows Rolling Net Scheduled Hours, week by week: Total Backlog and Hard Backlog from the live schedule. Tickets pushed over from the Tickets view show as a Filtered Backlog.
+
+## The queues
+
+The three queues are the shop's work lists. They read the same tickets as everything else, filtered by SIS status.
+
+| Queue | Statuses it holds |
+| --- | --- |
+| VDC Queue | Anything starting with 1, 2 or 3, plus (On Hold) and (On Hold): Drafting |
+| Procurement Queue | 4: Procurement, 3B: Foreman Review and (On Hold): Material |
+| Build Queue | 5A through 5D, 6: Build and (On Hold): Build |
+
+3B: Foreman Review is in both the VDC and Procurement queues on purpose.
+
+On-hold tickets sit at the top. Under them, tickets are sorted by Date Requested, earliest first, and tickets with no date go last.
+
+Each queue has a Mine / All toggle. On the VDC queue, Mine means the VDC designer is you. On the Build queue it means the Shop Lead is you. Procurement has no owner, so it always shows everything. If the app cannot match your account to a name, Mine shows everything and says so.
+
+Managers see a Stale flags toggle that marks tickets nobody has touched in a while. It is shop-wide: turning it on turns it on for everyone.
+
+### What can be edited in a queue
+
+The VDC queue is read-only.
+
+On the Procurement queue, leads and above can edit Parts Arrival, and BO Parts Arrival when that column is shown.
+
+On the Build queue, leads and above can edit Custom Start Date, Hrs / Day, Rev. Est. Hrs and Reported %. Shop Lead is read-only there. Builder(s) and Location(s) show a lock because they are not editable yet.
+
+Edits in a queue go through the same path as edits anywhere else, so they can be undone and they show in the ticket's activity.
+
+### VDC Due Date
+
+The VDC queue has a VDC Due Date column: 10 working days before the ticket's Custom Start, or before its Date Requested when there is no Custom Start. Weekends and holidays do not count. Rows within 5 working days of their due date are tinted.
+
+The lead was 7 working days until 2026-10-27, so the column moved 3 working days earlier that day.
+
+## Opening a ticket
+
+Clicking a ticket opens its detail panel on the right: the SIS fields, the editable fields, dependencies, material dates, and the Activity section with its history and comments. A link with ?ticket= in it opens straight to that ticket.
+
+## The alerts triangle
+
+The triangle in the header lists tickets that are Over budget, Past latest start, or Over capacity on a day. Your own tickets are listed first.

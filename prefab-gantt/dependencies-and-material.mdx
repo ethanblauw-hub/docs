@@ -1,0 +1,35 @@
+---
+title: "Dependencies and material"
+description: "Linking tickets, parts arrival dates, and gating a start on parts."
+---
+
+Leads and above can link tickets and set material dates. Both live in the ticket's detail panel, and both ask for a reason, which goes into the ticket's activity.
+
+## Dependencies
+
+A dependency says one ticket waits on another. Pick the predecessor (the picker searches this job or all tickets), the type and a lag:
+
+| Type | Meaning |
+| --- | --- |
+| FS | This ticket starts after the other finishes |
+| SS | This ticket starts after the other starts |
+| FF | This ticket finishes after the other finishes |
+| SF | This ticket finishes after the other starts |
+
+Lag is in working days. A positive number adds a gap, and a negative number lets the tickets overlap.
+
+The app will not let you create a loop, where two tickets end up waiting on each other.
+
+When a predecessor moves, everything after it moves with it. The Critical path button on Resource and Tickets highlights the longest chain of dependencies, and it is greyed out when there are none.
+
+## Material dates
+
+Parts Arrival is when the material is expected. BO Parts Arrival is for the backordered remainder. Both can be set from the detail panel, and from the Procurement queue.
+
+The dates show as markers on the chart. The Material arrival dates setting in Tweaks turns them on or off for you, and a single ticket can be set the other way from its panel.
+
+## Gating a start on parts
+
+Gate start on parts decides whether a material date holds the ticket back. The choices are Nothing, Parts Arrival or BO Parts Arrival. With a gate set, the ticket cannot start before that date, however early its Custom Start is.
+
+A date on its own does not move anything. It only holds a ticket back once the gate points at it.

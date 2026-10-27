@@ -112,6 +112,52 @@
             ]
           }
         ]
+      },
+      {
+        "tab": "Prefab Gantt",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": [
+              "prefab-gantt/overview",
+              "prefab-gantt/roles-and-permissions"
+            ]
+          },
+          {
+            "group": "Planning and scheduling",
+            "pages": [
+              "prefab-gantt/views-and-queues",
+              "prefab-gantt/editing-tickets",
+              "prefab-gantt/dependencies-and-material",
+              "prefab-gantt/planning-pages"
+            ]
+          },
+          {
+            "group": "Administration",
+            "pages": [
+              "prefab-gantt/users-and-access",
+              "prefab-gantt/notifications",
+              "prefab-gantt/sis-import",
+              "prefab-gantt/settings-and-switches"
+            ]
+          },
+          {
+            "group": "Features",
+            "pages": [
+              "prefab-gantt/vdc-on-time",
+              "prefab-gantt/analytics-and-reports",
+              "prefab-gantt/saved-views-and-export",
+              "prefab-gantt/baselines-milestones-whatif"
+            ]
+          },
+          {
+            "group": "Troubleshooting",
+            "pages": [
+              "prefab-gantt/cannot-see-or-do",
+              "prefab-gantt/error-messages"
+            ]
+          }
+        ]
       }
     ]
   },

@@ -1,0 +1,49 @@
+---
+title: "VDC on time at handoff"
+description: "How the VDC on-time percentage is worked out, what long lead and short notice mean, and why there is no history before October 2026."
+---
+
+The VDC On Time at Handoff section is on the Analytics page. It shows how often tickets leave VDC on or before their VDC due date.
+
+## What counts as a handoff
+
+A ticket hands off when it moves out of VDC: from a 1, 2 or 3 status to a 4 or later status, or to (On Hold): Material. The hourly import notices the move and records the ticket that day.
+
+Each ticket is recorded once. If it goes back to drafting and hands off again, the first handoff is the one that counts.
+
+## The due date
+
+The VDC due date is 10 working days before the ticket's start. The start is its Custom Start if one is set, otherwise its Date Requested, as they stood on the day it handed off. Weekends and holidays do not count as working days.
+
+This is the same date as the VDC Due Date column on the VDC queue.
+
+A ticket is on time if it handed off on or before that date.
+
+## Long lead and short notice
+
+Some tickets arrive with plenty of time and some do not, so the two are counted apart. Notice is the number of calendar days from when the ticket was created in SIS to its VDC due date.
+
+- Long lead is 14 days of notice or more.
+- Short notice is under 14.
+
+A ticket created two days before it is due is not held to the same bar as one created two months before.
+
+## What the section shows
+
+The monthly table has Month, Long lead (14+ days) and Short notice (under 14), newest month first, for the last 6 months.
+
+Under it, Recording since gives the date of the first recorded handoff and how many there are. Tickets with no start date or no creation date cannot be judged, and the line says how many of those were left out of the percentages.
+
+Avg moves before handoff shows how many times the Custom Start and the Date Requested changed before the ticket left VDC. A due date that kept moving is part of the story.
+
+Managers and admins also see a table by VDC designer: each designer's on-time percentage over the same months. A ticket two designers shared counts for both of them. A ticket with no designer shows as No designer.
+
+## No history before October 27, 2026
+
+Recording started on October 27, 2026, and the section starts empty from there. It should take a month or two before the percentages mean much.
+
+There is no way to fill in earlier months. SIS keeps a ticket's current Date Requested, not what it was on past days, so the due date a ticket was held to back then cannot be rebuilt.
+
+## Changing the numbers
+
+The 10-day lead and the 14-day line between long lead and short notice are settings in the app, not stored with each record. If either changes, every recorded handoff is judged again with the new numbers. Let me know if the shop wants either one changed.
