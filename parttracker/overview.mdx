@@ -10,7 +10,7 @@ These pages are for managers and for anyone who supports the app. They explain h
 
 ## The records
 
-A job comes from the ERP. PartTracker does not create real jobs. It reads them in on a schedule and removes them when the ERP stops listing them. See [Jobs and the ERP sync](/parttracker/jobs-and-erp-sync).
+A job is set up in the ERP or in Job Create, and both feed the company data warehouse in BigQuery. PartTracker does not create real jobs. It reads them from BigQuery on a schedule and removes them when BigQuery stops listing them. See [Jobs and the BigQuery sync](/parttracker/jobs-and-erp-sync).
 
 A BOM is the list of parts a job needs, imported from a spreadsheet or a PDF. One job can have several BOMs, one per PO. See [BOMs](/parttracker/boms).
 

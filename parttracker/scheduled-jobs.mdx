@@ -7,7 +7,7 @@ Five things run on their own. Nothing else happens without someone pressing a bu
 
 | What | When | What it does |
 | --- | --- | --- |
-| Job sync | About every 12 hours | Adds and updates jobs from the ERP, and removes jobs the ERP no longer lists. See [Jobs and the ERP sync](/parttracker/jobs-and-erp-sync). |
+| Job sync | About every 12 hours | Adds and updates jobs from BigQuery, and removes jobs BigQuery no longer lists. See [Jobs and the BigQuery sync](/parttracker/jobs-and-erp-sync). |
 | Production ticket sync | About every 12 hours | Adds and updates production tickets. Never deletes any. |
 | Stock totals rebuild | Every 2 minutes, 6:00 a.m. to about 5 p.m. Central, Monday to Friday | Recounts the Inventory page, but only when a BOM edit flagged it. See [Inventory totals](/parttracker/inventory-totals). |
 | Planned ticket announcement | 6 a.m. Central, Monday to Friday | Sends the Created notice for Planned tickets that ship today or the next business day. |
