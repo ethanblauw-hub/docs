@@ -1,0 +1,47 @@
+---
+title: "Roles and permissions"
+description: "The global roles, the three group roles, and what each one can do."
+---
+
+Everyone has a global role, which is either admin or user. Admins can do anything in any group. Everyone else gets their abilities from the role they hold in each operating group.
+
+## Group roles
+
+There are three group roles: Viewer, Contributor and Approver. They are held per group or subgroup, so the same person can be an Approver in one group and a Viewer in another.
+
+| | Viewer | Contributor | Approver |
+|---|---|---|---|
+| Read published SOPs | Yes | Yes | Yes |
+| Create and edit SOPs | No | Yes | Yes |
+| Share a SOP with named editors | No | Yes | Yes |
+| See the group's drafts and SOPs in review | No | No | Yes |
+| Publish, decline, archive and delete | No | No | Yes |
+| Approve access requests for the group | No | No | Yes |
+
+Any signed-in user can read a published SOP, whatever group they are in. The roles matter for everything else.
+
+A Viewer or Contributor only sees the drafts they own or have been added to as an editor. Approvers see every draft and review in their groups.
+
+The owner of a SOP can always see it, edit it, and delete it, whatever their role. People the owner adds as editors through the Share dialog can see and edit it too.
+
+The glossary of definitions is admin-only. No group role can curate it.
+
+## Subgroups
+
+A role on a subgroup also lets you read the SOPs that belong to its parent group. It does not work the other way for most roles: a Viewer or Contributor on the parent does not see SOPs that only belong to a subgroup. An Approver on the parent does.
+
+Creating a SOP in a subgroup works if you can create in that subgroup or in its parent.
+
+## Work location
+
+Each user has a work location of Field, Office or Both, and a SOP can be marked Field, Office, or left Company-Wide. Published SOPs are visible to everyone regardless of location. Drafts, reviews and archived SOPs marked Field only show to Field or Both users, and the same for Office.
+
+Admins, the owner, editors, and approvers in the SOP's groups see it either way.
+
+## Exporting and printing
+
+Viewer-only members of Industrial Controls, and its subgroups, cannot export or print its SOPs. Contributors and Approvers there can. Admins can always export.
+
+## Changes take a reload
+
+When an admin changes someone's role, it takes effect the next time that person loads a page. If someone says their new access is not showing up, have them refresh first.

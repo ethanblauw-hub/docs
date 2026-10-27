@@ -1,0 +1,44 @@
+---
+title: "Users and groups"
+description: "Settings, user roles, operating groups, access requests, work location and impersonation."
+---
+
+Most of this lives in Settings. Admins see every tab: User Management, Operating Groups, Areas, Templates, Definitions, Approval Groups and Maintenance. An Approver sees only the Areas tab, and has to go to `/settings` directly because the sidebar link only shows for admins.
+
+## Changing someone's roles
+
+In Settings, User Management, open the menu on the user's row and pick Edit Roles. From there you can set their global role, their work location, which groups they are an Approver, Contributor or Viewer in, and whether they can approve tips. Several users can be edited at once with the bulk edit option.
+
+The change applies on the user's next page load.
+
+## Operating groups
+
+The Operating Groups tab is admin-only. It is where groups and subgroups are created, renamed and deleted.
+
+Check with me before renaming Industrial Controls. Some of its rules depend on the group's name.
+
+## Access requests
+
+A user asks to join a group with Request Access, either on the page they land on when they have no group, or from the group list on Home. The request goes to the admins and to the Approvers of that group. For a subgroup it goes to the Approvers of the parent group.
+
+Approve it from the notification tray. Approving makes them a Viewer in that group. It never lowers a role they already have, and if they want Contributor or Approver, change it in User Management afterward.
+
+Asking twice before anyone acts does not send a second request. Someone who is already in the group, or is an admin, gets told they are already a member instead of sending one.
+
+## Work location
+
+New users pick Field or Office the first time they sign in. If they need both, the same prompt has a button that asks the admins. That request is in-app only. Set them to Both in Edit Roles to approve it.
+
+An admin can change anyone's work location in Edit Roles at any time.
+
+## Syncing users from the employee directory
+
+User Management has a Sync External Users panel with a Pull Data button. It reads the employee directory and matches each person's department to a group, so their roles are ready when they first sign in. It reports how many people it processed, mapped and skipped. It does not overwrite anyone who has already signed in.
+
+A department that does not match a group is skipped. If someone shows up with no roles after a sync, check their department against the group names.
+
+## Impersonation
+
+Admins can see the app as another user, which is the easiest way to answer "why can't they see this?". In User Management, open the user's menu and pick Impersonate. A red banner shows while it is on, with a Stop Impersonating button, and it ends on its own after an hour.
+
+While impersonating, the pages and actions behave as that user would see them. A few things stay tied to you: you cannot override a blocked publish, you cannot send requests on their behalf, and you cannot change their notification settings. Some lists that load in the browser can still show what you can see rather than what they can see, so if something looks off, double check before telling them it is there.

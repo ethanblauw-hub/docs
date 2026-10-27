@@ -1,0 +1,51 @@
+---
+title: "Error messages"
+description: "The messages people are most likely to see, and what causes them."
+---
+
+These are the messages people are most likely to report, with what is usually behind them.
+
+## Editing and saving
+
+| Message | What it means |
+|---|---|
+| A draft is already in progress. | Someone already started a working copy of this published SOP. You were sent to theirs. It does not time out, so it has to be finished or declined. |
+| You do not have permission to edit this SOP. | They are not the owner or an editor, and they are not a Contributor or Approver in its groups. |
+| You must select at least one Operating Group or Subgroup. | The SOP has no group. Every SOP needs one. |
+| You do not have permission to ... in one or more of the selected groups. | One of the groups on the SOP is one they cannot create in. Every group on a SOP needs them to be a Contributor or Approver there. |
+| You do not have permission to move this SOP into one or more of the selected groups. | They added a group they cannot create in. |
+| Validation failed. | Something in the form is invalid. Autosave stops while this is true, so nothing new is saving. |
+
+## Review and publishing
+
+| Message | What it means |
+|---|---|
+| You do not have permission to publish this SOP. | They are not an Approver in its groups or a named reviewer on it. |
+| A SOP that is draft cannot be moved to published. | A draft has to be submitted for review before it can be published. Other combinations of states give the same message. |
+| A publish message naming who it is waiting on | Named reviewers have not all approved, or someone saved a change after they approved. |
+| You are not an assigned reviewer for this SOP. | Only the people named on the review can approve it. |
+| This SOP has not been saved since the approval gate was introduced. Save it once, then approve. | An older SOP. Save it once and try again. |
+| A reason is required to decline this request. | Decline needs a reason. |
+
+## Copying and deleting
+
+| Message | What it means |
+|---|---|
+| You do not have permission to create a SOP in one or more of this SOP's groups. | Duplicate needs them to be able to create in every group the SOP is in. |
+| You do not have access to the source SOP. | Fork needs them to be able to read the original. |
+| This SOP cannot be copied to another group. | That SOP cannot be forked. |
+| You do not have permission to create SOPs in the target group. | Fork needs them to be able to create in the group they picked. |
+| Only Admins, Approvers, or the Owner can delete this document. | Contributors cannot delete SOPs they do not own. |
+| Could not remove this SOP's images from storage, so nothing was deleted. Please try again. | The delete stopped partway and left the SOP untouched. Try again, and let me know if it keeps happening. |
+
+## Access and admin
+
+| Message | What it means |
+|---|---|
+| You are already a member of this group. | They asked to join a group they are already in. |
+| This request has already been handled. | Someone else approved or removed the access request first. |
+| Forbidden. | The person approving is no longer an Approver of that group. |
+| Only admins can change the mail mode. | Email Delivery is admin-only. |
+| Imports are currently capped at 14MB | The file is too large to import. Split it into smaller sections. |
+
+If someone gets a message that is not on this page, send me a screenshot of it and what they were doing.
