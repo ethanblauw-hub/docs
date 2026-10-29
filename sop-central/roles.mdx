@@ -38,6 +38,22 @@ Each user has a work location of Field, Office or Both, and a SOP can be marked 
 
 Admins, the owner, editors, and approvers in the SOP's groups see it either way.
 
+### Default list filter
+
+Separately from that rule, the SOP lists open filtered to the viewer's own work location. This is a soft filter, not access control. Anyone can clear it, and it does not change what they are allowed to open.
+
+| User's work location | List starts on |
+|---|---|
+| Field | Field + Company-Wide |
+| Office | Office + Company-Wide |
+| Both, or not set | All locations |
+
+- On the Dashboard, the filter menu has a Filter by Work Location section. While the list is narrowed, a notice above it says which SOPs are showing, with a Show all locations link.
+- On `/home-v2`, the Work location select next to the search does the same.
+- The Published SOPs count on Home applies the same default, so it matches the Dashboard list it links to.
+
+The choice is not saved. Each time a list opens it starts from the user's own location again.
+
 ## Exporting and printing
 
 Viewer-only members of Industrial Controls, and its subgroups, cannot export or print its SOPs. Contributors and Approvers there can. Admins can always export.
